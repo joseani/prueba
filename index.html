@@ -102,8 +102,8 @@ const motivos = ["einstein", "frankenstein", "liberty", "mona"];
 const nombresLegibles = {
   "einstein": "Albert Einstein",
   "frankenstein": "Frankenstein",
-  "liberty": "la Estatua de la Libertad",
-  "mona": "la Mona Lisa"
+  "liberty": "Estatua de la Libertad",
+  "mona": "Mona Lisa"
 };
 
 const TOTAL_VOTOS = 44; // 11 comparaciones x 4 motivos
@@ -194,8 +194,7 @@ function mostrarPartidoActual() {
   const numeroPreguntaActual = numeroVotoGlobal + 1;
 
   document.getElementById("pregunta").innerText =
-    `¿Cuál de estos dos mosaicos te gusta más para representar a ${nombreMotivo}? ` +
-    `(pregunta ${numeroPreguntaActual}/${TOTAL_VOTOS})`;
+    `¿Qué mosaico te gusta más?`;
 
   document.getElementById("contenedor-partido").innerHTML = `
     <div class="tarjeta" onclick="elegir('${metodoA}', '${metodoB}')">
@@ -230,8 +229,7 @@ function siguienteMotivo() {
 function actualizarProgreso() {
   const motivo = motivoActual();
   document.getElementById("progreso").innerText =
-    `Motivo ${motivoIndex + 1} de ${motivosOrden.length} (${motivo}) — ` +
-    `Quedan ${players.length} candidatos en esta fase`;
+    `${nombreMotivo} - pregunta ${numeroPreguntaActual}/${TOTAL_VOTOS}`;
 }
 
 function mostrarPantallaFinal() {
