@@ -9,7 +9,7 @@
     font-family: -apple-system, Arial, sans-serif;
     background: #f5f5f5;
     margin: 0;
-    padding: 20px; 
+    padding: 20px;
     text-align: center;
     color: #222;
   }
@@ -67,6 +67,14 @@
     line-height: 1.5;
     text-align: left;
   }
+
+  /* En pantallas estrechas (donde se muestra todasV.png), que ocupe solo 2/3 del ancho */
+  @media (max-width: 600px) {
+    #pantalla-bienvenida img {
+      width: 66%;
+      max-width: 66%;
+    }
+  }
   #boton-empezar {
     padding: 14px 32px;
     font-size: 1.1em;
@@ -119,7 +127,7 @@
 
   <p>
     Estos son los cuatro motivos que vas a evaluar, reconstruidos con piezas de Tetris. En cada pantalla verás dos versiones del mismo motivo. Simplemente haz click en la
-    que más te gustee. No hay respuestas correctas ni incorrectas, solo cuenta tu impresión.
+    que más te guste. No hay respuestas correctas ni incorrectas, solo cuenta tu impresión.
   </p>
 
   <button id="boton-empezar" onclick="empezarCuestionario()">Empezar</button>
