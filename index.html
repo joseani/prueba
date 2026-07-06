@@ -14,11 +14,6 @@
     color: #222;
   }
   h1 { font-size: 1.4em; margin-bottom: 5px; }
-  #progreso {
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 0.95em;
-  }
   #contenedor-partido {
     display: flex;
     justify-content: center;
@@ -124,15 +119,11 @@
 
   <p>
     Estos son los cuatro motivos que vas a evaluar, reconstruidos con piezas de Tetris
-    mediante distintas técnicas: Albert Einstein, Frankenstein, la Estatua de la Libertad
-    y la Mona Lisa.
-  </p>
-  <p>
-    En cada pantalla verás dos versiones del mismo motivo. Simplemente haz click en la
+    mediante distintas técnicas. En cada pantalla verás dos versiones del mismo motivo. Simplemente haz click en la
     que más te guste — no hay respuestas correctas ni incorrectas, solo cuenta tu impresión.
   </p>
   <p>
-    Son 44 comparaciones en total (unos 5 minutos). Tus respuestas son anónimas y se usan
+    Tus respuestas son anónimas y se usan
     únicamente con fines de investigación.
   </p>
 
@@ -142,7 +133,6 @@
 <!-- ======= PANTALLA DEL TORNEO (oculta al inicio) ======= -->
 <div id="pantalla-torneo" style="display:none;">
   <h1 id="pregunta">¿Qué mosaico te gusta más?</h1>
-  <div id="progreso"></div>
 
   <div id="contenedor-partido"></div>
   <div id="mensaje-espera"></div>
@@ -241,8 +231,6 @@ function rutaImagen(motivo, metodo) {
 }
 
 function mostrarPartidoActual() {
-  actualizarProgreso();
-
   if (currentMatchIndex >= round.length) {
     // La ronda ha terminado
     if (winnersRonda.length === 1) {
@@ -288,14 +276,6 @@ function siguienteMotivo() {
   } else {
     iniciarMotivoActual();
   }
-}
-
-function actualizarProgreso() {
-  const motivo = motivoActual();
-  const nombreMotivo = nombresLegibles[motivo] || motivo;
-  const numeroPreguntaActual = numeroVotoGlobal + 1;
-  document.getElementById("progreso").innerText =
-    `${nombreMotivo} - pregunta ${numeroPreguntaActual}/${TOTAL_VOTOS}`;
 }
 
 function mostrarPantallaFinal() {
